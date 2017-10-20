@@ -51,7 +51,7 @@ defmodule Cast.Account do
   """
   def create_organization(attrs \\ %{}) do
     %Organization{}
-    |> Organization.changeset(attrs)
+    |> Organization.create_changeset(Map.merge(attrs, %{"calendar" => %{}}))
     |> Repo.insert()
   end
 
