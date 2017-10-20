@@ -11,6 +11,7 @@ defmodule CastWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    resources "/organizations", OrganizationController, except: [:new, :edit]
   end
 
   scope "/", CastWeb do
